@@ -29,15 +29,15 @@ numtostring(8)
 console.log(numtostring(8) +"is a string line 26")
 // Write a JavaScript program to convert a string to the number.
 
-const stringtonum = (str) => {
+const stringToNum = (str) => {
   // num1 = Number(str);
   str = parseInt(str);
   return str; 
  
 }
 
-stringtonum("20 years")
-console.log(typeof(stringtonum("20 years")) + "is a string line 37 string to num works");
+stringToNum("20 years")
+console.log(typeof(stringToNum("20 years")) + "is a string line 37 string to num works");
 
 
 // Write a JavaScript program that takes in different datatypes and prints out whether they are a:
@@ -93,7 +93,7 @@ console.log(addition(3,5) + "is the sum for addition line 86")
 
 // Write a JavaScript program that runs only when 2 things are true.
 
-function twothingsRtrue(para1,para2) {
+function twoThingsRTrue(para1,para2) {
   if(para1 === true && para2 === true ){
     console.log("line 92 this is true.")
   }
@@ -101,12 +101,12 @@ function twothingsRtrue(para1,para2) {
   console.log("line94 this is false")
   }
 }
-twothingsRtrue(true,true);
+twoThingsRTrue(true,true);
 console.log("line99 is true");
 
 // Write a JavaScript program that runs when 1 of 2 things are true.
 
-function EitherOneisTrue(para3,para4) {
+function eitherOneisTrue(para3,para4) {
   if(para3 === true || para4 === true ){
     console.log(" line 105 either para3 or para4 is true, requirement satisfy")
   }
@@ -114,7 +114,7 @@ function EitherOneisTrue(para3,para4) {
   console.log("line108 this is false")
   }
 }
-EitherOneisTrue(true,false);
+eitherOneisTrue(true,false);
 console.log("either one works");
 
 
@@ -142,6 +142,26 @@ console.log("both R False line 126 is true");
 // 5. Or go use the `npm start` command and navigate to localhost:8080 (ctrl + C to close)
 // 6. go to `index.html` 
 // 7. create inputs, buttons and event listeners that render the code blocks you built above to the DOM.
+
+const input = document.getElementById('nameInput')
+const button = document.querySelector('#submit')
+const display = document.querySelector('.display')
+
+let str = ""
+
+input.addEventListener('keyup', (event) => { //keyup is there to help document every time the user press the keyboard
+  console.log(event.target.value)
+})
+
+input.addEventListener('input', (event) => {//print out whatever user type in and display them on screenz
+  console.log(event.target.value)
+  str = event.target.value
+})
+
+button.addEventListener('click', () => {
+  console.log(str)
+  display.innerText = str
+})
 
 
 
